@@ -254,7 +254,7 @@ export default function Footer() {
 
               <li>+52 55 42583726</li>
               <li>barrerarendon@gmail.com</li>
-              <li>Ciudad de México</li>
+              <li>Ciudad de México, Tláhuac</li>
               <li>Lun - Domingo</li>
 
             </ul>
