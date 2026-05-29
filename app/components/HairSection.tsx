@@ -6,32 +6,32 @@ const services = [
   {
     number: "01",
     title: "Tintes",
-    image: "/hair1.jpg",
+    image: "/hair1.webp",
   },
   {
     number: "02",
     title: "Balayage",
-    image: "/hair2.jpg",
+    image: "/hair2.webp",
   },
   {
     number: "03",
     title: "Cortes",
-    image: "/hair3.jpg",
+    image: "/hair3.webp",
   },
   {
     number: "04",
     title: "Tratamientos",
-    image: "/hair4.jpg",
+    image: "/hair4.webp",
   },
     {
     number: "05",
     title: "Alaciado",
-    image: "/hair5.jpg",
+    image: "/hair5.webp",
   },
       {
     number: "06",
     title: "Extensiones",
-    image: "/hair6.jpg",
+    image: "/hair6.webp",
   },
 ];
 

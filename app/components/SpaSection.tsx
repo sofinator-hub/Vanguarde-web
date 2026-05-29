@@ -5,19 +5,19 @@ import Image from "next/image";
 const spaServices = [
   {
     title: "Faciales",
-    image: "/spa1.jpg",
+    image: "/spa1.webp",
   },
   {
     title: "Manicure",
-    image: "/spa2.jpg",
+    image: "/spa2.webp",
   },
   {
     title: "Botox",
-    image: "/spa3.jpg",
+    image: "/spa3.webp",
   },
   {
     title: "Cejas & Pestañas",
-    image: "/spa4.jpg",
+    image: "/spa4.webp",
   },
 ];
 

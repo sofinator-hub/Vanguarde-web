@@ -3,12 +3,12 @@
 import Image from "next/image";
 
 const gallery = [
-  "/hair1.jpg",
-  "/spa2.jpg",
-  "/modelo_cabello3.jpg",
-  "/hair4.jpg",
-  "/spa4.jpg",
-  "/hair3.jpg",
+  "/hair1.webp",
+  "/spa2.webp",
+  "/modelo_cabello3.webp",
+  "/hair4.webp",
+  "/spa4.webp",
+  "/hair3.webp",
 ];
 
 export default function Footer() {

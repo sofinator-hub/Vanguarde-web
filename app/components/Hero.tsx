@@ -199,7 +199,7 @@ export default function Hero() {
           >
 
             <Image
-              src="/modelo_cabello5.png"
+              src="/modelo_cabello5.webp"
               alt="Beauty Model"
               width={850}
               height={1000}
