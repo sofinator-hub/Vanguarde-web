@@ -252,10 +252,10 @@ export default function Footer() {
 
             <ul className="space-y-4 text-white/55">
 
-              <li>+52 55 1234 5678</li>
-              <li>contacto@vanguarde.com</li>
+              <li>+52 55 42583726</li>
+              <li>barrerarendon@gmail.com</li>
               <li>Ciudad de México</li>
-              <li>Lun - Sáb / 10AM - 8PM</li>
+              <li>Lun - Domingo</li>
 
             </ul>
 
@@ -285,7 +285,7 @@ export default function Footer() {
           </p>
 
           <p className="text-sm text-white/25">
-            Designed with luxury aesthetics.
+            Designed by Sofia Miranda
           </p>
 
         </div>
