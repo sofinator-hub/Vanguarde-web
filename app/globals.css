@@ -1,0 +1,66 @@
+@import "@fontsource/cormorant-garamond";
+@import "@fontsource/montserrat";
+
+@import "tailwindcss";
+
+:root {
+  --background: #08080a;
+  --foreground: #f8efea;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(231, 184, 217, 0.15),
+      transparent 30%
+    ),
+    #08080a;
+
+  color: var(--foreground);
+
+  font-family: "Montserrat", sans-serif;
+
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Cormorant Garamond", serif;
+}
+
+::selection {
+  background: #e7b8d9;
+  color: black;
+}
+
+.glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: rgba(231, 184, 217, 0.12);
+  filter: blur(140px);
+  border-radius: 999px;
+  z-index: 0;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+}
