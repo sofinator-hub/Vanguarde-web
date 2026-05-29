@@ -56,19 +56,62 @@ export default function Navbar() {
 
         {/* LINKS */}
 
-        <nav className="hidden lg:flex items-center gap-14 text-sm uppercase tracking-[0.15em] text-zinc-300">
+        <nav
+          className="
+            hidden
+            lg:flex
+            items-center
+            gap-14
+            text-sm
+            uppercase
+            tracking-[0.15em]
+            text-zinc-300
+          "
+        >
 
-          <a href="#">Inicio</a>
-          <a href="#">Servicios</a>
-          <a href="#">Spa</a>
-          <a href="#">Galería</a>
-          <a href="#">Contacto</a>
+          <a
+            href="#"
+            className="transition-colors hover:text-[#f2b9d8]"
+          >
+            Inicio
+          </a>
+
+          <a
+            href="#services"
+            className="transition-colors hover:text-[#f2b9d8]"
+          >
+            Servicios
+          </a>
+
+          <a
+            href="#spa"
+            className="transition-colors hover:text-[#f2b9d8]"
+          >
+            Spa
+          </a>
+
+          <a
+            href="#gallery"
+            className="transition-colors hover:text-[#f2b9d8]"
+          >
+            Galería
+          </a>
+
+          <a
+            href="#contact"
+            className="transition-colors hover:text-[#f2b9d8]"
+          >
+            Contacto
+          </a>
 
         </nav>
 
-        {/* BUTTON */}
+        {/* WHATSAPP BUTTON */}
 
-        <button
+        <a
+          href="https://wa.me/525542583726?text=Hola%20Vanguarde,%20me%20gustaría%20agendar%20una%20cita."
+          target="_blank"
+          rel="noopener noreferrer"
           className="
             bg-[#f2b9d8]
             text-black
@@ -82,10 +125,13 @@ export default function Navbar() {
             hover:scale-105
             transition-transform
             whitespace-nowrap
+            flex
+            items-center
+            justify-center
           "
         >
           Agenda tu cita
-        </button>
+        </a>
 
       </div>
 
