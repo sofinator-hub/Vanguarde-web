@@ -5,13 +5,15 @@ export default function Hero() {
     <section className="relative min-h-screen overflow-hidden bg-[#050507]">
       {/* GRID */} 
 
-      <div
-        className="
-          absolute inset-0
-          bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px)]
-          bg-[size:80px_80px]
-        "
-      />
+{/* 
+<div
+  className="
+    absolute inset-0
+    bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px)]
+    bg-[size:80px_80px]
+  "
+/>
+*/}
 
       {/* GLOW - SOLO DESKTOP */}
 

@@ -1,7 +1,5 @@
-"use client";
-
-import Image from "next/image";
-
+import Image from "next/image"; 
+ 
 const services = [
   {
     number: "01",
@@ -11,7 +9,7 @@ const services = [
   {
     number: "02",
     title: "Balayage",
-    image: "/hair2.webp",
+    image: "/hair1.webp", // Cambia cuando tengas hair2.webp
   },
   {
     number: "03",
@@ -23,12 +21,12 @@ const services = [
     title: "Tratamientos",
     image: "/hair4.webp",
   },
-    {
+  {
     number: "05",
     title: "Alaciado",
     image: "/hair5.webp",
   },
-      {
+  {
     number: "06",
     title: "Extensiones",
     image: "/hair6.webp",
@@ -40,8 +38,7 @@ export default function HairSection() {
     <section
       id="services"
       className="relative bg-[#050507] py-24 overflow-hidden"
-    >
-
+    > 
       {/* GRID */}
 
       <div
@@ -54,14 +51,11 @@ export default function HairSection() {
 
       {/* CONTENT */}
 
-      <div className="relative z-10 max-w-[1600px] mx-auto px-6 md:px-10">
-
+      <div className="relative z-10 max-w-[1600px] mx-auto px-6 md:px-10"> 
         {/* TOP */}
-
+ 
         <div className="flex flex-col lg:flex-row justify-between items-start gap-10 mb-16">
-
-          <div>
-
+          <div> 
             <p className="uppercase tracking-[0.35em] text-[#f2b9d8] text-xs md:text-sm mb-5">
               Cabello
             </p>
@@ -78,8 +72,7 @@ export default function HairSection() {
               Transformación
               <br />
               & estilo.
-            </h2>
-
+            </h2> 
           </div>
 
           <p
@@ -91,12 +84,10 @@ export default function HairSection() {
               leading-relaxed
             "
           >
-            Técnicas modernas, colorimetría premium
-            y cuidado profesional para elevar tu imagen
-            con resultados naturales y sofisticados.
+            Técnicas modernas, colorimetría premium y cuidado profesional para
+            elevar tu imagen con resultados naturales y sofisticados.
           </p>
-
-        </div>
+        </div> 
 
         {/* CARDS */}
 
@@ -108,8 +99,7 @@ export default function HairSection() {
             lg:grid-cols-6
             gap-6
           "
-        >
-
+        > 
           {services.map((service) => (
             <div
               key={service.title}
@@ -123,14 +113,18 @@ export default function HairSection() {
                 border-white/5
                 h-[500px]
               "
-            >
-
+            > 
               {/* IMAGE */}
 
               <Image
                 src={service.image}
                 alt={service.title}
                 fill
+                sizes="
+                  (max-width: 640px) 100vw,
+                  (max-width: 1024px) 50vw,
+                  16vw
+                "
                 className="
                   object-cover
                   transition-transform
@@ -145,10 +139,8 @@ export default function HairSection() {
 
               {/* CONTENT */}
 
-              <div className="absolute inset-0 p-7 flex flex-col justify-between">
-
-                <div className="flex items-start justify-between">
-
+              <div className="absolute inset-0 p-7 flex flex-col justify-between"> 
+                <div className="flex items-start justify-between"> 
                   <span className="text-white/40 text-sm tracking-[0.2em]">
                     {service.number}
                   </span>
@@ -160,7 +152,8 @@ export default function HairSection() {
                       rounded-full
                       border
                       border-white/20
-                      backdrop-blur-md
+                      bg-black/40
+                      md:backdrop-blur-md
                       text-white
                       text-lg
                       transition-all
@@ -170,11 +163,9 @@ export default function HairSection() {
                   >
                     ↗
                   </button>
-
                 </div>
 
                 <div>
-
                   <h3
                     className="
                       text-[#f8efea]
@@ -195,19 +186,13 @@ export default function HairSection() {
                       duration-500
                       group-hover:w-full
                     "
-                  />
-
-                </div>
-
-              </div>
-
+                  /> 
+                </div> 
+              </div> 
             </div>
           ))}
-
-        </div>
-
-      </div>
-
+        </div> 
+      </div> 
     </section>
   );
 }

@@ -1,6 +1,4 @@
-"use client";
-
-export default function Navbar() {
+export default function Navbar() { 
   return (
     <header className="fixed top-0 left-0 w-full z-50 px-4 md:px-8 py-5">
 
@@ -14,8 +12,7 @@ export default function Navbar() {
           rounded-full
           border
           border-white/10
-          bg-black/40
-          backdrop-blur-xl
+          bg-[#08080A]/90 
           px-5
           md:px-10
           py-4
