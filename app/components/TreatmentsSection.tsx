@@ -1,7 +1,5 @@
-"use client";
-
-const treatments = [
-  {
+const treatments = [ 
+  { 
     title: "Hidratación Profunda",
     description:
       "Devuelve brillo, suavidad y nutrición intensa para un cabello saludable y luminoso.",
@@ -28,8 +26,7 @@ export default function TreatmentsSection() {
         py-28
       "
     >
-
-      {/* GRID */}
+      {/* GRID */} 
 
       <div
         className="
@@ -39,9 +36,22 @@ export default function TreatmentsSection() {
         "
       />
 
-      {/* GLOW */}
+      {/* GLOW SOLO DESKTOP */}
 
-      <div className="absolute right-0 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[#f2b9d8]/20 blur-[140px]" />
+      <div
+        className="
+          hidden md:block
+          absolute
+          right-0
+          top-1/2
+          h-[500px]
+          w-[500px]
+          -translate-y-1/2
+          rounded-full
+          bg-[#f2b9d8]/20
+          blur-[80px]
+        "
+      />
 
       <div
         className="
@@ -56,12 +66,10 @@ export default function TreatmentsSection() {
           md:px-10
           lg:flex-row
         "
-      >
-
+      > 
         {/* LEFT */}
 
-        <div className="lg:w-[30%]">
-
+        <div className="lg:w-[30%]"> 
           <p
             className="
               mb-5
@@ -99,9 +107,8 @@ export default function TreatmentsSection() {
               md:text-lg
             "
           >
-            Tecnología estética moderna y tratamientos
-            premium diseñados para elevar tu bienestar,
-            belleza y cuidado personal.
+            Tecnología estética moderna y tratamientos premium diseñados para
+            elevar tu bienestar, belleza y cuidado personal.
           </p>
 
           <button
@@ -117,7 +124,7 @@ export default function TreatmentsSection() {
               uppercase
               tracking-[0.15em]
               text-white
-              backdrop-blur-xl
+              md:backdrop-blur-xl
               transition-all
               hover:scale-105
               hover:bg-[#f2b9d8]
@@ -125,8 +132,7 @@ export default function TreatmentsSection() {
             "
           >
             Conoce más
-          </button>
-
+          </button> 
         </div>
 
         {/* RIGHT */}
@@ -139,8 +145,7 @@ export default function TreatmentsSection() {
             gap-6
             md:grid-cols-3
           "
-        >
-
+        > 
           {treatments.map((treatment, index) => (
             <div
               key={treatment.title}
@@ -150,9 +155,9 @@ export default function TreatmentsSection() {
                 rounded-[2.5rem]
                 border
                 border-white/10
-                bg-white/[0.04]
+                bg-white/[0.06]
                 p-8
-                backdrop-blur-2xl
+                md:backdrop-blur-2xl
                 transition-all
                 duration-500
                 hover:-translate-y-3
@@ -165,10 +170,21 @@ export default function TreatmentsSection() {
                 }
               `}
             >
+              {/* MINI GLOW SOLO DESKTOP */}
 
-              {/* MINI GLOW */}
-
-              <div className="absolute right-[-40px] top-[-40px] h-[140px] w-[140px] rounded-full bg-[#f2b9d8]/10 blur-[70px]" />
+              <div
+                className="
+                  hidden md:block
+                  absolute
+                  right-[-40px]
+                  top-[-40px]
+                  h-[140px]
+                  w-[140px]
+                  rounded-full
+                  bg-[#f2b9d8]/10
+                  blur-[40px]
+                "
+              />
 
               {/* ICON */}
 
@@ -233,15 +249,11 @@ export default function TreatmentsSection() {
                 "
               >
                 + Info
-              </button>
-
+              </button> 
             </div>
           ))}
-
-        </div>
-
-      </div>
-
+        </div> 
+      </div> 
     </section>
   );
 }
