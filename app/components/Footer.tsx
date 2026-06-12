@@ -1,7 +1,5 @@
-"use client";
-
-import Image from "next/image";
-
+import Image from "next/image"; 
+ 
 const gallery = [
   "/hair1.webp",
   "/spa2.webp",
@@ -14,8 +12,7 @@ const gallery = [
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-[#050507]">
-
-      {/* GRID */}
+      {/* GRID */} 
 
       <div
         className="
@@ -25,19 +22,29 @@ export default function Footer() {
         "
       />
 
-      {/* GLOW */}
+      {/* GLOW SOLO DESKTOP */}
 
-      <div className="absolute bottom-[-200px] left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[#f2b9d8]/10 blur-[140px]" />
+      <div
+        className="
+          hidden md:block
+          absolute
+          bottom-[-200px]
+          left-1/2
+          h-[500px]
+          w-[500px]
+          -translate-x-1/2
+          rounded-full
+          bg-[#f2b9d8]/10
+          blur-[80px]
+        "
+      />
 
       {/* INSTAGRAM STRIP */}
 
-      <div className="relative z-10 border-b border-white/5">
-
-        <div className="mx-auto max-w-[1700px] px-4 py-8 md:px-8">
-
+      <div className="relative z-10 border-b border-white/5"> 
+        <div className="mx-auto max-w-[1700px] px-4 py-8 md:px-8"> 
           <div className="mb-6 flex items-center justify-between">
-
-            <h3
+            <h3 
               className="
                 text-xl
                 font-light
@@ -59,8 +66,7 @@ export default function Footer() {
             >
               @VanguardeStudio
             </p>
-
-          </div>
+          </div> 
 
           {/* GALLERY */}
 
@@ -72,8 +78,7 @@ export default function Footer() {
               md:grid-cols-3
               lg:grid-cols-6
             "
-          >
-
+          > 
             {gallery.map((image, index) => (
               <div
                 key={index}
@@ -85,12 +90,16 @@ export default function Footer() {
                   rounded-[2rem]
                   md:h-[220px]
                 "
-              >
-
+              > 
                 <Image
                   src={image}
                   alt="Gallery"
                   fill
+                  sizes="
+                    (max-width: 768px) 50vw,
+                    (max-width: 1024px) 33vw,
+                    16vw
+                  "
                   className="
                     object-cover
                     transition-transform
@@ -107,22 +116,17 @@ export default function Footer() {
                     duration-500
                     group-hover:bg-black/20
                   "
-                />
-
+                /> 
               </div>
             ))}
-
-          </div>
-
+          </div> 
         </div>
-
-      </div>
+      </div> 
 
       {/* FOOTER CONTENT */}
-
+ 
       <div className="relative z-10 mx-auto max-w-[1700px] px-6 py-20 md:px-10">
-
-        <div
+        <div 
           className="
             grid
             grid-cols-1
@@ -130,12 +134,10 @@ export default function Footer() {
             md:grid-cols-2
             lg:grid-cols-5
           "
-        >
-
+        > 
           {/* BRAND */}
 
-          <div className="lg:col-span-2">
-
+          <div className="lg:col-span-2"> 
             <h2
               className="
                 text-4xl
@@ -176,8 +178,7 @@ export default function Footer() {
 
             {/* SOCIALS */}
 
-            <div className="mt-10 flex gap-4">
-
+            <div className="mt-10 flex gap-4"> 
               {["IG", "FB", "TT", "WA"].map((social) => (
                 <button
                   key={social}
@@ -197,70 +198,55 @@ export default function Footer() {
                   {social}
                 </button>
               ))}
-
-            </div>
-
+            </div> 
           </div>
 
           {/* NAVIGATION */}
 
-          <div>
-
+          <div> 
             <h4 className="mb-6 text-lg text-[#f8efea]">
               Navegación
             </h4>
 
             <ul className="space-y-4 text-white/55">
-
-              <li>Inicio</li>
+              <li>Inicio</li> 
               <li>Servicios</li>
               <li>Spa</li>
               <li>Galería</li>
               <li>Contacto</li>
-
-            </ul>
-
+            </ul> 
           </div>
 
           {/* SERVICES */}
-
-          <div>
-
+ 
+          <div> 
             <h4 className="mb-6 text-lg text-[#f8efea]">
               Servicios
             </h4>
 
-            <ul className="space-y-4 text-white/55">
-
+            <ul className="space-y-4 text-white/55"> 
               <li>Cabello</li>
               <li>Faciales</li>
               <li>Pedicure</li>
               <li>Manicure</li>
               <li>Pestañas</li>
-
-            </ul>
-
-          </div>
+            </ul> 
+          </div> 
 
           {/* CONTACT */}
 
-          <div>
-
+          <div> 
             <h4 className="mb-6 text-lg text-[#f8efea]">
               Contacto
             </h4>
 
-            <ul className="space-y-4 text-white/55">
-
+            <ul className="space-y-4 text-white/55"> 
               <li>+52 55 42583726</li>
               <li>barrerarendon@gmail.com</li>
               <li>Ciudad de México</li>
               <li>Lun - Dom</li>
-
-            </ul>
-
-          </div>
-
+            </ul> 
+          </div> 
         </div>
 
         {/* BOTTOM */}
@@ -278,8 +264,7 @@ export default function Footer() {
             pt-8
             md:flex-row
           "
-        >
-
+        > 
           <p className="text-sm text-white/35">
             © 2026 Vanguarde Beauty Studio.
           </p>
@@ -287,11 +272,8 @@ export default function Footer() {
           <p className="text-sm text-white/25">
             Designed by Sofia Miranda.
           </p>
-
-        </div>
-
-      </div>
-
+        </div> 
+      </div> 
     </footer>
   );
 }
