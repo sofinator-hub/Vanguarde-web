@@ -1,10 +1,24 @@
+import dynamic from "next/dynamic";
+
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import HairSection from "./components/HairSection";
-import SpaSection from "./components/SpaSection";
-import TreatmentsSection from "./components/TreatmentsSection";
+import Hero from "./components/Hero"; 
 import PromoBanner from "./components/Promobanner";
-import Footer from "./components/Footer";
+
+const HairSection = dynamic(
+  () => import("./components/HairSection")
+);
+
+const SpaSection = dynamic(
+  () => import("./components/SpaSection")
+);
+
+const TreatmentsSection = dynamic(
+  () => import("./components/TreatmentsSection")
+);
+
+const Footer = dynamic(
+  () => import("./components/Footer")
+);
 
 export default function Home() {
   return (
@@ -12,6 +26,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <PromoBanner />
+
       <HairSection />
       <SpaSection />
       <TreatmentsSection />
