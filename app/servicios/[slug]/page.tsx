@@ -1,5 +1,6 @@
-import { notFound } from "next/navigation"; 
+import { notFound } from "next/navigation";
 import { hairServices } from "@/app/data/hair-services";
+import { spaServices } from "@/app/data/spa-services";
 
 export default async function ServicePage({
   params,
@@ -9,7 +10,8 @@ export default async function ServicePage({
   const { slug } = await params;
 
   const service =
-    hairServices[slug as keyof typeof hairServices];
+    hairServices[slug as keyof typeof hairServices] ??
+    spaServices[slug as keyof typeof spaServices];
 
   if (!service) {
     notFound();
@@ -31,7 +33,7 @@ export default async function ServicePage({
           "
         />
 
-        {/* GLOW DESKTOP */}
+        {/* GLOW */}
 
         <div
           className="
@@ -49,6 +51,20 @@ export default async function ServicePage({
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-32">
+          <a
+            href="/"
+            className="
+              inline-flex
+              items-center
+              gap-2
+              text-[#f2b9d8]
+              mb-8
+              hover:opacity-80
+            "
+          >
+            ← Regresar
+          </a>
+
           <p
             className="
               uppercase
@@ -133,37 +149,39 @@ export default async function ServicePage({
 
       {/* INCLUYE */}
 
-      {Array.isArray(service.extras) && (
-        <section className="max-w-7xl mx-auto px-6 pb-20">
-          <h2
-            className="
-              text-4xl
-              md:text-5xl
-              font-light
-              mb-10
-            "
-          >
-            Incluye
-          </h2>
+      {"extras" in service &&
+        Array.isArray(service.extras) &&
+        service.extras.length > 0 && (
+          <section className="max-w-7xl mx-auto px-6 pb-20">
+            <h2
+              className="
+                text-4xl
+                md:text-5xl
+                font-light
+                mb-10
+              "
+            >
+              Incluye
+            </h2>
 
-          <div className="grid gap-4 md:grid-cols-2">
-            {service.extras.map((item) => (
-              <div
-                key={item}
-                className="
-                  rounded-2xl
-                  border
-                  border-white/10
-                  bg-white/[0.03]
-                  p-5
-                "
-              >
-                ✦ {item}
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
+            <div className="grid gap-4 md:grid-cols-2">
+              {service.extras.map((item) => (
+                <div
+                  key={item}
+                  className="
+                    rounded-2xl
+                    border
+                    border-white/10
+                    bg-white/[0.03]
+                    p-5
+                  "
+                >
+                  ✦ {item}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
       {/* CTA */}
 

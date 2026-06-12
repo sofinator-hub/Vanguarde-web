@@ -1,21 +1,26 @@
-import Image from "next/image"; 
+import Image from "next/image";
+import Link from "next/link";
 
 const spaServices = [
   {
-    title: "Faciales",
-    image: "/spa1.webp",
+    title: "Mantenimiento Facial",
+    image: "/spa4.webp",
+    slug: "mantenimiento-facial",
   },
   {
-    title: "Manicure",
-    image: "/spa2.webp",
+    title: "Tratamientos Faciales",
+    image: "/spa1.webp",
+    slug: "tratamientos-faciales",
   },
   {
     title: "Botox",
     image: "/spa3.webp",
+    slug: "botox",
   },
   {
-    title: "Cejas & Pestañas",
-    image: "/spa4.webp",
+    title: "Tratamientos Capilares",
+    image: "/spa2.webp",
+    slug: "tratamientos-capilares",
   },
 ];
 
@@ -25,7 +30,7 @@ export default function SpaSection() {
       id="spa"
       className="relative overflow-hidden bg-[#efe5df] py-28"
     >
-      {/* GLOW - SOLO DESKTOP */}
+      {/* GLOW SOLO DESKTOP */}
 
       <div
         className="
@@ -58,7 +63,7 @@ export default function SpaSection() {
       >
         {/* LEFT */}
 
-        <div className="lg:w-[28%]"> 
+        <div className="lg:w-[28%]">
           <p className="mb-5 text-xs uppercase tracking-[0.4em] text-[#d89cbc] md:text-sm">
             Spa & Bienestar
           </p>
@@ -87,8 +92,9 @@ export default function SpaSection() {
               md:text-lg
             "
           >
-            Tratamientos premium diseñados para revitalizar cuerpo y piel en una
-            experiencia sofisticada, relajante y completamente personalizada.
+            Cuidado facial, rejuvenecimiento, tratamientos
+            capilares y procedimientos especializados para
+            realzar tu belleza de forma profesional.
           </p>
 
           <button
@@ -108,8 +114,8 @@ export default function SpaSection() {
               hover:scale-105
             "
           >
-            Ver experiencias
-          </button> 
+            Ver tratamientos
+          </button>
         </div>
 
         {/* RIGHT */}
@@ -125,8 +131,9 @@ export default function SpaSection() {
           "
         >
           {spaServices.map((service) => (
-            <div
+            <Link
               key={service.title}
+              href={`/servicios/${service.slug}`}
               className="
                 group
                 relative
@@ -142,10 +149,10 @@ export default function SpaSection() {
                 hover:-translate-y-3
               "
             >
-              {/* IMAGE */} 
+              {/* IMAGE */}
 
               <div className="relative h-[420px] overflow-hidden">
-                <Image 
+                <Image
                   src={service.image}
                   alt={service.title}
                   fill
@@ -160,12 +167,12 @@ export default function SpaSection() {
                     duration-700
                     group-hover:scale-110
                   "
-                /> 
+                />
               </div>
 
               {/* CONTENT */}
 
-              <div className="flex items-center justify-between p-6"> 
+              <div className="flex items-center justify-between p-6">
                 <h3
                   className="
                     text-xl
@@ -177,7 +184,7 @@ export default function SpaSection() {
                   {service.title}
                 </h3>
 
-                <button
+                <div
                   className="
                     flex
                     h-11
@@ -189,17 +196,17 @@ export default function SpaSection() {
                     border-black/10
                     text-black
                     transition-all
-                    hover:bg-black
-                    hover:text-white
+                    group-hover:bg-black
+                    group-hover:text-white
                   "
                 >
                   ↗
-                </button> 
-              </div> 
-            </div>
+                </div>
+              </div>
+            </Link>
           ))}
-        </div> 
+        </div>
       </div>
-    </section> 
+    </section>
   );
 }
