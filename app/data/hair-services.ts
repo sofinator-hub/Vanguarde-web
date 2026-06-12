@@ -1,6 +1,7 @@
 export const hairServices = {
   tintes: {
     title: "Tintes",
+    theme: "dark",
 
     image: "/hair1.webp",
 
@@ -39,6 +40,7 @@ export const hairServices = {
 
   cortes: {
     title: "Cortes",
+    theme: "dark",
 
     image: "/hair3.webp",
 
@@ -61,6 +63,7 @@ export const hairServices = {
 
   alaciados: {
     title: "Alaciados",
+    theme: "dark",
 
     image: "/hair5.webp",
 
@@ -92,6 +95,7 @@ export const hairServices = {
 
   extensiones: {
     title: "Extensiones",
+    theme: "dark",
 
     image: "/hair6.webp",
 
@@ -126,6 +130,7 @@ export const hairServices = {
 
   peinados: {
     title: "Peinados",
+    theme: "dark",
 
     image: "/hair4.webp",
 
@@ -166,6 +171,7 @@ export const hairServices = {
 
 permanentes: {
   title: "Permanentes",
+  theme: "dark",
 
   image: "/hair6.webp",
 

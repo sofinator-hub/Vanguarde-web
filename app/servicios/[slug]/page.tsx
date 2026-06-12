@@ -2,6 +2,18 @@ import { notFound } from "next/navigation";
 import { hairServices } from "@/app/data/hair-services";
 import { spaServices } from "@/app/data/spa-services";
 
+type Price = {
+  name: string;
+  value: string;
+};
+
+type Service = {
+  title: string;
+  description: string;
+  prices: readonly Price[];
+  extras?: readonly string[];
+};
+
 export default async function ServicePage({
   params,
 }: {
@@ -9,9 +21,14 @@ export default async function ServicePage({
 }) {
   const { slug } = await params;
 
-  const service =
-    hairServices[slug as keyof typeof hairServices] ??
+  const hairService =
+    hairServices[slug as keyof typeof hairServices];
+
+  const spaService =
     spaServices[slug as keyof typeof spaServices];
+
+  const service = (hairService ||
+    spaService) as Service | undefined;
 
   if (!service) {
     notFound();
@@ -21,9 +38,7 @@ export default async function ServicePage({
     <main className="min-h-screen bg-[#050507] text-[#f8efea]">
       {/* HERO */}
 
-      <section className="relative overflow-hidden">
-        {/* GRID */}
-
+      <section className="relative overflow-hidden"> 
         <div
           className="
             absolute inset-0
@@ -31,13 +46,10 @@ export default async function ServicePage({
             linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px)]
             bg-[size:80px_80px]
           "
-        />
-
-        {/* GLOW */}
+        /> 
 
         <div
-          className="
-            hidden md:block
+          className=" 
             absolute
             right-0
             top-1/2
@@ -50,15 +62,14 @@ export default async function ServicePage({
           "
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-32">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 py-32">
           <a
             href="/"
             className="
               inline-flex
               items-center
               gap-2
-              text-[#f2b9d8]
-              mb-8
+              text-[#f2b9d8] 
               hover:opacity-80
             "
           >
@@ -67,11 +78,12 @@ export default async function ServicePage({
 
           <p
             className="
+              mt-10
+              text-xs
               uppercase
               tracking-[0.35em]
               text-[#f2b9d8]
-              text-xs
-              md:text-sm
+              md:text-sm 
             "
           >
             Servicio Premium
@@ -80,9 +92,9 @@ export default async function ServicePage({
           <h1
             className="
               mt-4
-              text-5xl
-              md:text-7xl
+              text-5xl 
               font-light
+              md:text-7xl 
             "
           >
             {service.title}
@@ -92,10 +104,10 @@ export default async function ServicePage({
             className="
               mt-6
               max-w-3xl
-              text-white/65
-              text-base
-              md:text-lg
+              text-base 
               leading-relaxed
+              text-white/65 
+              md:text-lg
             "
           >
             {service.description}
@@ -105,13 +117,13 @@ export default async function ServicePage({
 
       {/* PRECIOS */}
 
-      <section className="max-w-7xl mx-auto px-6 pb-20">
+      <section className="mx-auto max-w-7xl px-6 pb-20">
         <h2
           className="
-            text-4xl
-            md:text-5xl
+            mb-10 
+            text-4xl 
             font-light
-            mb-10
+            md:text-5xl 
           "
         >
           Precios
@@ -129,15 +141,15 @@ export default async function ServicePage({
                 p-8
               "
             >
-              <p className="text-white/50 mb-3">
+              <p className="mb-3 text-white/50">
                 {price.name}
               </p>
 
               <h3
                 className="
-                  text-3xl
-                  text-[#f2b9d8]
+                  text-3xl 
                   font-light
+                  text-[#f2b9d8] 
                 "
               >
                 {price.value}
@@ -149,43 +161,41 @@ export default async function ServicePage({
 
       {/* INCLUYE */}
 
-      {"extras" in service &&
-        Array.isArray(service.extras) &&
-        service.extras.length > 0 && (
-          <section className="max-w-7xl mx-auto px-6 pb-20">
-            <h2
-              className="
-                text-4xl
-                md:text-5xl
-                font-light
-                mb-10
-              "
-            >
-              Incluye
-            </h2>
+      {service.extras && (
+        <section className="mx-auto max-w-7xl px-6 pb-20">
+          <h2
+            className="
+              mb-10
+              text-4xl
+              font-light
+              md:text-5xl
+            "
+          >
+            Incluye
+          </h2>
 
-            <div className="grid gap-4 md:grid-cols-2">
-              {service.extras.map((item) => (
-                <div
-                  key={item}
-                  className="
-                    rounded-2xl
-                    border
-                    border-white/10
-                    bg-white/[0.03]
-                    p-5
-                  "
-                >
-                  ✦ {item}
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
+          <div className="grid gap-4 md:grid-cols-2">
+            {service.extras.map((item) => (
+              <div
+                key={item}
+                className="
+                  rounded-2xl
+                  border
+                  border-white/10
+                  bg-white/[0.03]
+                  p-5
+                "
+              >
+                ✦ {item}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
 
-      <section className="max-w-7xl mx-auto px-6 pb-32">
+      <section className="mx-auto max-w-7xl px-6 pb-32">
         <div
           className="
             rounded-[2rem]
@@ -199,33 +209,34 @@ export default async function ServicePage({
           <h2
             className="
               text-4xl
-              md:text-5xl
               font-light
-            "
+              md:text-5xl
+            " 
           >
             Agenda tu cita
           </h2>
 
           <p
             className="
-              mt-4
-              text-white/60
-              max-w-2xl
               mx-auto
-            "
+              mt-4
+              max-w-2xl
+              text-white/60
+            " 
           >
             Reserva tu servicio y recibe atención
-            personalizada para lograr el resultado
-            que deseas.
+            personalizada.
           </p>
 
           <a
-            href={`https://wa.me/525542583726?text=Hola%20Vanguarde,%20me%20interesa%20el%20servicio%20de%20${service.title}`}
+            href={`https://wa.me/525542583726?text=Hola%20Vanguarde,%20me%20interesa%20el%20servicio%20de%20${encodeURIComponent(
+              service.title
+            )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="
-              inline-flex
+            className=" 
               mt-8
+              inline-flex 
               rounded-full
               bg-[#f2b9d8]
               px-8

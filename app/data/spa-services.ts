@@ -1,6 +1,7 @@
 export const spaServices = {
   "mantenimiento-facial": {
     title: "Mantenimiento Facial",
+    theme: "light",
 
     image: "/spa4.webp",
 
@@ -40,6 +41,7 @@ export const spaServices = {
 
   "tratamientos-faciales": {
     title: "Tratamientos Faciales",
+    theme: "light",
 
     image: "/spa1.webp",
 
@@ -84,6 +86,7 @@ export const spaServices = {
 
   botox: {
     title: "Botox",
+    theme: "light",
 
     image: "/spa3.webp",
 
@@ -111,6 +114,7 @@ export const spaServices = {
 
   "tratamientos-capilares": {
     title: "Tratamientos Capilares",
+    theme: "light",
 
     image: "/spa2.webp",
 
