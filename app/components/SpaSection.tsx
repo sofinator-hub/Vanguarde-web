@@ -1,6 +1,4 @@
-"use client";
-
-import Image from "next/image";
+import Image from "next/image"; 
 
 const spaServices = [
   {
@@ -27,17 +25,40 @@ export default function SpaSection() {
       id="spa"
       className="relative overflow-hidden bg-[#efe5df] py-28"
     >
+      {/* GLOW - SOLO DESKTOP */}
 
-      {/* GLOW */}
+      <div
+        className="
+          hidden md:block
+          absolute
+          left-[-200px]
+          top-1/2
+          h-[500px]
+          w-[500px]
+          -translate-y-1/2
+          rounded-full
+          bg-[#f2b9d8]/20
+          blur-[80px]
+        "
+      />
 
-      <div className="absolute left-[-200px] top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[#f2b9d8]/20 blur-[140px]" />
-
-      <div className="relative z-10 mx-auto flex max-w-[1600px] flex-col gap-16 px-6 md:px-10 lg:flex-row">
-
+      <div
+        className="
+          relative
+          z-10
+          mx-auto
+          flex
+          max-w-[1600px]
+          flex-col
+          gap-16
+          px-6
+          md:px-10
+          lg:flex-row
+        "
+      >
         {/* LEFT */}
 
-        <div className="lg:w-[28%]">
-
+        <div className="lg:w-[28%]"> 
           <p className="mb-5 text-xs uppercase tracking-[0.4em] text-[#d89cbc] md:text-sm">
             Spa & Bienestar
           </p>
@@ -66,9 +87,8 @@ export default function SpaSection() {
               md:text-lg
             "
           >
-            Tratamientos premium diseñados para
-            revitalizar cuerpo y piel en una experiencia
-            sofisticada, relajante y completamente personalizada.
+            Tratamientos premium diseñados para revitalizar cuerpo y piel en una
+            experiencia sofisticada, relajante y completamente personalizada.
           </p>
 
           <button
@@ -84,13 +104,12 @@ export default function SpaSection() {
               uppercase
               tracking-[0.15em]
               text-black
-              transition-all
+              transition-transform
               hover:scale-105
             "
           >
             Ver experiencias
-          </button>
-
+          </button> 
         </div>
 
         {/* RIGHT */}
@@ -105,70 +124,48 @@ export default function SpaSection() {
             lg:grid-cols-4
           "
         >
-
-          {spaServices.map((service, index) => (
+          {spaServices.map((service) => (
             <div
               key={service.title}
-              className={`
+              className="
                 group
                 relative
                 overflow-hidden
-                bg-white/60
-                backdrop-blur-xl
+                rounded-t-[8rem]
+                rounded-b-[2rem]
+                bg-white/80
                 border
                 border-black/5
-                transition-all
+                md:backdrop-blur-xl
+                transition-transform
                 duration-500
                 hover:-translate-y-3
-
-                ${
-                  index === 0
-                    ? "rounded-t-[8rem] rounded-b-[2rem]"
-                    : ""
-                }
-
-                ${
-                  index === 1
-                    ? "rounded-t-[8rem] rounded-b-[2rem]"
-                    : ""
-                }
-                
-                ${
-                  index === 2
-                    ? "rounded-t-[8rem] rounded-b-[2rem]"
-                    : ""
-                }
-
-                ${
-                  index === 3
-                    ? "rounded-t-[8rem] rounded-b-[2rem]"
-                    : ""
-                }
-              `}
+              "
             >
-
-              {/* IMAGE */}
+              {/* IMAGE */} 
 
               <div className="relative h-[420px] overflow-hidden">
-
-                <Image
+                <Image 
                   src={service.image}
                   alt={service.title}
                   fill
+                  sizes="
+                    (max-width: 640px) 100vw,
+                    (max-width: 1024px) 50vw,
+                    25vw
+                  "
                   className="
                     object-cover
                     transition-transform
                     duration-700
                     group-hover:scale-110
                   "
-                />
-
+                /> 
               </div>
 
               {/* CONTENT */}
 
-              <div className="flex items-center justify-between p-6">
-
+              <div className="flex items-center justify-between p-6"> 
                 <h3
                   className="
                     text-xl
@@ -197,17 +194,12 @@ export default function SpaSection() {
                   "
                 >
                   ↗
-                </button>
-
-              </div>
-
+                </button> 
+              </div> 
             </div>
           ))}
-
-        </div>
-
+        </div> 
       </div>
-
-    </section>
+    </section> 
   );
 }

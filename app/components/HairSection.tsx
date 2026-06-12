@@ -9,7 +9,7 @@ const services = [
   {
     number: "02",
     title: "Balayage",
-    image: "/hair1.webp", // Cambia cuando tengas hair2.webp
+    image: "/hair2.webp", // Cambia cuando tengas hair2.webp
   },
   {
     number: "03",
