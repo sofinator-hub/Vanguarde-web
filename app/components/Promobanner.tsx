@@ -1,7 +1,5 @@
-"use client";
-
-export default function PromoBanner() {
-  return (
+export default function PromoBanner() { 
+  return ( 
     <section
       className="
         relative
@@ -10,10 +8,24 @@ export default function PromoBanner() {
         py-10
       "
     >
+      {/* GLOW SOLO DESKTOP */}
 
-      {/* GLOW */}
-
-      <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/20 blur-[100px]" />
+      <div
+        className="
+          hidden
+          md:block
+          absolute
+          left-1/2
+          top-1/2
+          h-[300px]
+          w-[300px]
+          -translate-x-1/2
+          -translate-y-1/2
+          rounded-full
+          bg-white/20
+          blur-[60px]
+        "
+      />
 
       {/* CONTENT */}
 
@@ -29,8 +41,7 @@ export default function PromoBanner() {
           px-6
           text-center
         "
-      >
-
+      > 
         <span
           className="
             text-black
@@ -44,7 +55,14 @@ export default function PromoBanner() {
           Beauty
         </span>
 
-        <span className="hidden md:block text-black/40 text-2xl">
+        <span
+          className="
+            hidden
+            md:block
+            text-black/40
+            text-2xl
+          "
+        >
           ✦
         </span>
 
@@ -61,7 +79,14 @@ export default function PromoBanner() {
           Wellness
         </span>
 
-        <span className="hidden md:block text-black/40 text-2xl">
+        <span
+          className="
+            hidden
+            md:block
+            text-black/40
+            text-2xl
+          "
+        >
           ✦
         </span>
 
@@ -78,7 +103,14 @@ export default function PromoBanner() {
           Luxury Care
         </span>
 
-        <span className="hidden md:block text-black/40 text-2xl">
+        <span
+          className="
+            hidden
+            md:block
+            text-black/40
+            text-2xl
+          "
+        >
           ✦
         </span>
 
@@ -94,9 +126,7 @@ export default function PromoBanner() {
         >
           Vanguarde Studio
         </span>
-
-      </div>
-
+      </div> 
     </section>
   );
 }
