@@ -1,6 +1,6 @@
 export const hairServices = {
   tintes: {
-    title: "Tintes",
+    title: "Bar color",
     theme: "dark",
 
     image: "/hair1.webp",
