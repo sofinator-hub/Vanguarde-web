@@ -16,16 +16,19 @@ body {
   background:
     radial-gradient(
       circle at top right,
-      rgba(231, 184, 217, 0.15),
-      transparent 30%
+      rgba(231, 184, 217, 0.12),
+      transparent 25%
     ),
     #08080a;
 
   color: var(--foreground);
-
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif; 
 
   overflow-x: hidden;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -40,16 +43,18 @@ h4 {
   color: black;
 }
 
+/* Desktop glow */
 .glow {
   position: absolute;
   width: 500px;
   height: 500px;
   background: rgba(231, 184, 217, 0.12);
-  filter: blur(140px);
-  border-radius: 999px;
+  border-radius: 999px; 
   z-index: 0;
+  filter: blur(80px);
 }
 
+/* Hero Grid */
 .hero-grid {
   background-image:
     linear-gradient(
@@ -63,4 +68,15 @@ h4 {
     );
 
   background-size: 80px 80px;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .glow {
+    display: none;
+  }
+
+  .hero-grid {
+    background-size: 50px 50px;
+  }
 }

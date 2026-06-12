@@ -3,8 +3,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#050507]">
-
-      {/* GRID */}
+      {/* GRID */} 
 
       <div
         className="
@@ -14,9 +13,22 @@ export default function Hero() {
         "
       />
 
-      {/* GLOW */}
+      {/* GLOW - SOLO DESKTOP */}
 
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px] bg-[#f2b9d8]/20 blur-[150px] rounded-full" />
+      <div
+        className="
+          hidden md:block
+          absolute
+          right-0
+          top-1/2
+          -translate-y-1/2
+          w-[600px]
+          h-[600px]
+          bg-[#f2b9d8]/20
+          blur-[80px]
+          rounded-full
+        "
+      />
 
       {/* HERO CONTENT */}
 
@@ -29,13 +41,12 @@ export default function Hero() {
           px-6
           md:px-12
           pt-36
-          md:pt-40
-          min-h-screen
+          md:pt-40 
           flex
           items-center
+          min-h-screen
         "
-      >
-
+      > 
         <div
           className="
             flex
@@ -46,13 +57,11 @@ export default function Hero() {
             gap-10
             w-full
           "
-        >
-
+        > 
           {/* LEFT */}
 
           <div className="w-full lg:w-[48%] text-center lg:text-left">
-
-            <p
+            <p 
               className="
                 uppercase
                 tracking-[0.35em]
@@ -66,8 +75,7 @@ export default function Hero() {
             </p>
 
             <h1 className="leading-[0.85] font-light">
-
-              <span
+              <span 
                 className="
                   block
                   text-[#f8efea]
@@ -107,8 +115,7 @@ export default function Hero() {
               >
                 define.
               </span>
-
-            </h1>
+            </h1> 
 
             <p
               className="
@@ -139,8 +146,7 @@ export default function Hero() {
                 gap-4
                 mt-10
               "
-            >
-
+            > 
               <button
                 className="
                   w-full
@@ -179,9 +185,7 @@ export default function Hero() {
               >
                 AGENDAR CITA
               </button>
-
-            </div>
-
+            </div> 
           </div>
 
           {/* RIGHT */}
@@ -195,15 +199,15 @@ export default function Hero() {
               justify-center
               lg:justify-end
               items-end
-            "
-          >
-
+            " 
+          > 
             <Image
               src="/modelo_cabello5.webp"
               alt="Beauty Model"
               width={850}
               height={1000}
               priority
+              sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 850px"
               className="
                 object-contain
                 h-[55vh]
@@ -215,16 +219,12 @@ export default function Hero() {
                 z-10
                 scale-105
                 lg:translate-y-6
-                drop-shadow-[0_0_80px_rgba(242,185,216,0.18)]
+                drop-shadow-[0_0_50px_rgba(242,185,216,0.18)]
               "
             />
-
-          </div>
-
-        </div>
-
-      </div>
-
+          </div> 
+        </div> 
+      </div> 
     </section>
   );
 }
