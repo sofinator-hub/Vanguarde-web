@@ -1,6 +1,6 @@
 export const hairServices = {
-  barcolor: {
-    title: "Bar Color",
+  tintes: {
+    title: "Tintes",
 
     image: "/hair1.webp",
 
@@ -164,29 +164,39 @@ export const hairServices = {
     ],
   },
 
-  "tratamientos-capilares": {
-    title: "Tratamientos Capilares",
+permanentes: {
+  title: "Permanentes",
 
-    image: "/hair1.webp",
+  image: "/hair6.webp",
 
-    description:
-      "Tratamientos especializados para hidratar, restaurar y recuperar la fibra natural del cabello.",
+  description:
+    "Permanentes para crear rizos definidos, volumen y movimiento con diferentes técnicas profesionales.",
 
-    prices: [
-      {
-        name: "Tratamiento Capilar",
-        value: "$500 MXN",
-      },
-    ],
+  prices: [
+    {
+      name: "Cabello Corto",
+      value: "$400 MXN",
+    },
+    {
+      name: "Cabello Mediano",
+      value: "$500 MXN",
+    },
+    {
+      name: "Cabello Largo",
+      value: "$600 MXN",
+    },
+    {
+      name: "Extra Largo",
+      value: "$700 MXN",
+    },
+  ],
 
-    extras: [
-      "Botox Capilar",
-      "Keratina",
-      "Jalea Real",
-      "Hidratación Profunda",
-      "Recuperación de la Fibra Capilar",
-      "Mayor Brillo",
-      "Mayor Suavidad",
-    ],
-  },
+  extras: [
+    "Rizos",
+    "Rulos",
+    "Espiral",
+    "Boomerang",
+    "Carretes",
+  ],
+},
 } as const;
